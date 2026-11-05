@@ -4,6 +4,27 @@
   root.classList.add('js');
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  // Mobile menu: the button shows and hides the links below 760px
+  var navToggle = document.querySelector('.nav-toggle');
+  if (navToggle) {
+    var nav = navToggle.closest('.nav');
+    var setMenu = function (open) {
+      nav.classList.toggle('open', open);
+      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      navToggle.setAttribute('aria-label', open ? 'Close menu' : 'Menu');
+    };
+    navToggle.addEventListener('click', function () { setMenu(!nav.classList.contains('open')); });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && nav.classList.contains('open')) { setMenu(false); navToggle.focus(); }
+    });
+    nav.querySelectorAll('.nav-links a').forEach(function (a) { a.addEventListener('click', function () { setMenu(false); }); });
+    if (window.matchMedia) {
+      var wide = window.matchMedia('(min-width: 761px)');
+      var onWide = function () { if (wide.matches) setMenu(false); };
+      if (wide.addEventListener) wide.addEventListener('change', onWide); else if (wide.addListener) wide.addListener(onWide);
+    }
+  }
+
   // Counters: data-count="54" data-prefix="$" data-suffix="M"
   var counters = document.querySelectorAll('[data-count]');
   function runCounter(el) {

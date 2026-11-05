@@ -5,6 +5,7 @@
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; form-action 'self' mailto:; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<noscript><style>@media (max-width: 760px) { .nav-links { display: flex !important; } .nav-toggle { display: none !important; } }</style></noscript>
 <title>Guy delle Piane · Snowball Holdings</title>
 <meta name="description" content="Principal of Snowball Holdings. Investor, founder and deal maker, working with family offices and founders.">
 <meta property="og:title" content="Guy delle Piane · Snowball Holdings">
@@ -137,6 +138,28 @@ ul { margin: 0; padding: 0; list-style: none; }
 .nav-links .lang { font-family: var(--mono); color: var(--on-navy-3); font-size: 12px; letter-spacing: .1em; }
 .nav-links .lang a { color: var(--on-navy-3); padding: 0; }
 .nav-links .lang a::after { display: none; }
+
+/* mobile menu: collapses the links behind a menu button below 760px */
+.nav-toggle { display: none; }
+@media (max-width: 760px) {
+  .nav { padding-block: 18px; gap: 0; }
+  .nav-toggle { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; margin-right: -10px; padding: 0; background: none; border: 0; border-radius: 8px; color: var(--on-navy); cursor: pointer; }
+  .nav-toggle:focus-visible { outline: 2px solid var(--gold-light); outline-offset: 2px; }
+  .nav-toggle .bars, .nav-toggle .bars::before, .nav-toggle .bars::after { display: block; width: 22px; height: 1.5px; background: currentColor; border-radius: 1px; transition: transform .3s var(--ease), background-color .2s; }
+  .nav-toggle .bars { position: relative; }
+  .nav-toggle .bars::before, .nav-toggle .bars::after { content: ""; position: absolute; left: 0; }
+  .nav-toggle .bars::before { top: -7px; }
+  .nav-toggle .bars::after { top: 7px; }
+  .nav-toggle[aria-expanded="true"] .bars { background: transparent; }
+  .nav-toggle[aria-expanded="true"] .bars::before { transform: translateY(7px) rotate(45deg); }
+  .nav-toggle[aria-expanded="true"] .bars::after { transform: translateY(-7px) rotate(-45deg); }
+  .nav-links { display: none; flex-basis: 100%; flex-direction: column; align-items: stretch; gap: 0; margin-top: 14px; border-top: 1px solid rgba(255,255,255,.14); font-size: 17px; }
+  .nav.open .nav-links { display: flex; }
+  .nav-links a { padding: 15px 0; border-bottom: 1px solid rgba(255,255,255,.08); }
+  .nav-links a::after { display: none; }
+  .nav-links a[aria-current="page"] { color: var(--gold-light); }
+}
+@media (max-width: 760px) and (prefers-reduced-motion: reduce) { .nav-toggle .bars, .nav-toggle .bars::before, .nav-toggle .bars::after { transition: none; } }
 
 /* hero atmosphere (video slot later) */
 .atmos { position: absolute; inset: 0; pointer-events: none; }
@@ -369,7 +392,8 @@ ul { margin: 0; padding: 0; list-style: none; }
   <div class="atmos" aria-hidden="true"><div class="glow g2" style="left: auto; right: -10%; bottom: -40%"></div><div class="grid"></div></div>
   <nav class="wrap nav" aria-label="Main">
     <a class="brand" href="index.html"><img src="img/snowball-wordmark-white.svg" alt="Snowball Holdings" width="185" height="42" fetchpriority="high"></a>
-    <div class="nav-links">
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Menu"><span class="bars" aria-hidden="true"></span></button>
+    <div class="nav-links" id="nav-links">
       <a href="advisory.html">Advisory</a>
       <a href="founder.html" aria-current="page">Founder</a>
       <a href="contact.html">Contact</a>
