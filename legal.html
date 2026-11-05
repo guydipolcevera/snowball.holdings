@@ -2,11 +2,15 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; form-action 'self' mailto:; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Legal · Snowball Holdings</title>
 <meta name="description" content="Company details, privacy and cookie information for snowball.holdings.">
 <meta property="og:title" content="Legal · Snowball Holdings">
 <meta property="og:description" content="Company details, privacy and cookie information for snowball.holdings.">
+<link rel="canonical" href="https://snowball.holdings/legal.html">
+<meta property="og:url" content="https://snowball.holdings/legal.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Snowball Holdings">
 <meta property="og:image" content="https://snowball.holdings/img/og.jpg">
@@ -16,10 +20,16 @@
 <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="img/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="preload" href="assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/dm-serif-display-400.woff2" as="font" type="font/woff2" crossorigin>
 <style>
+/* fonts: self-hosted (SIL OFL 1.1), Latin subset */
+@font-face { font-family: 'DM Serif Display'; font-style: normal; font-weight: 400; font-display: swap; src: url(assets/fonts/dm-serif-display-400.woff2) format('woff2'); }
+@font-face { font-family: 'Inter'; font-style: normal; font-weight: 400; font-display: swap; src: url(assets/fonts/inter-400.woff2) format('woff2'); }
+@font-face { font-family: 'Inter'; font-style: normal; font-weight: 500; font-display: swap; src: url(assets/fonts/inter-500.woff2) format('woff2'); }
+@font-face { font-family: 'Inter'; font-style: normal; font-weight: 600; font-display: swap; src: url(assets/fonts/inter-600.woff2) format('woff2'); }
+@font-face { font-family: 'JetBrains Mono'; font-style: normal; font-weight: 400; font-display: swap; src: url(assets/fonts/jetbrains-mono-400.woff2) format('woff2'); }
+@font-face { font-family: 'JetBrains Mono'; font-style: normal; font-weight: 500; font-display: swap; src: url(assets/fonts/jetbrains-mono-500.woff2) format('woff2'); }
 /* snowball.holdings · phase 1
    Layout: one 1240px column, full-bleed navy bands for header, advisory and footer; everything else on warm off-white. */
 :root {
@@ -173,7 +183,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 .list li { padding: 15px 0; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; gap: 16px; transition: padding-left .4s var(--ease); }
 .list li:hover { padding-left: 10px; }
 .list li span:first-child { font-weight: 500; }
-.list li .mono { color: #6B7482; }
+.list li .mono { color: #5F6876; }
 .on-navy .list { border-color: var(--navy-line); }
 .on-navy .list li { border-color: var(--navy-line); }
 .on-navy .list li .mono { color: #7E8CA3; }
@@ -186,7 +196,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 
 .cases { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; }
 .case { min-width: 0; border-top: 2px solid var(--navy-2); padding-top: 28px; display: flex; flex-direction: column; gap: 12px; }
-.case .mono { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: #6B7482; }
+.case .mono { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: #5F6876; }
 .case p { color: var(--ink-2); }
 
 .contact { display: flex; flex-wrap: wrap; gap: 32px 64px; align-items: flex-end; justify-content: space-between; }
@@ -254,7 +264,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 
 .site-foot { background: var(--navy); color: var(--on-navy-3); font-size: 13px; line-height: 1.6; }
 .site-foot .wrap { padding-block: 36px; display: flex; flex-wrap: wrap; gap: 12px 32px; justify-content: space-between; align-items: center; }
-.site-foot a { color: #C8D0DC; text-decoration: none; }
+.site-foot a { color: #C8D0DC; text-decoration: none; display: inline-block; padding: 6px 0; }
 .site-foot .links { display: flex; gap: 24px; }
 
 /* motion */
@@ -352,15 +362,14 @@ ul { margin: 0; padding: 0; list-style: none; }
 <body>
 
 <header class="site-head plain">
-  <div class="bg" aria-hidden="true"><img src="img/slate-900.webp" alt=""></div>
+  <div class="bg" aria-hidden="true"><img width="900" height="900" src="img/slate-900.webp" alt=""></div>
   <nav class="wrap nav" aria-label="Main">
-    <a class="brand" href="index.html"><img src="img/snowball-wordmark-white.svg" alt="Snowball Holdings" width="185" height="42"></a>
+    <a class="brand" href="index.html"><img src="img/snowball-wordmark-white.svg" alt="Snowball Holdings" width="185" height="42" fetchpriority="high"></a>
     <div class="nav-links">
       <a href="advisory.html">Advisory</a>
       <a href="founder.html">Founder</a>
       <a href="contact.html">Contact</a>
       <a href="portal.html">Investor portal</a>
-      <span class="lang">EN / <a href="index.html" title="Italian version to follow">IT</a></span>
     </div>
   </nav>
   <section class="wrap hero small">
@@ -398,12 +407,12 @@ ul { margin: 0; padding: 0; list-style: none; }
 
     <section id="cookies" class="reveal">
       <h2 class="h-display">Cookies</h2>
-      <p>This site sets no cookies of its own and uses no analytics. Fonts are loaded from Google Fonts, which may record your IP address when the font files are requested; see Google's privacy policy for details. If we add any other third-party service in future, this page and a consent banner will be updated first.</p>
+      <p>This site sets no cookies of its own and uses no analytics. Fonts are served from this site, so browsing it makes no requests to third parties. If we add any other third-party service in future, this page and a consent banner will be updated first.</p>
     </section>
 
     <section id="credits" class="reveal">
       <h2 class="h-display">Credits</h2>
-      <p>Design and build: Snowball Holdings. Typefaces: DM Serif Display, Inter and JetBrains Mono, via Google Fonts. Photography: generated imagery, art-directed by Snowball Holdings; no image shows a real person, property or company.</p>
+      <p>Design and build: Snowball Holdings. Typefaces: DM Serif Display, Inter and JetBrains Mono, via Google Fonts. Photography: generated imagery, art-directed by Snowball Holdings, except the portrait of Guy delle Piane. Co-investor and partner logos belong to their respective owners.</p>
     </section>
   </div>
 </main>
@@ -415,182 +424,7 @@ ul { margin: 0; padding: 0; list-style: none; }
     <p class="links"><a href="portal.html">Investor portal</a><a href="legal.html#privacy">Privacy</a><a href="legal.html#cookies">Cookies</a><a href="legal.html#company">Legal</a></p>
   </div>
 </footer>
-<script>(function () {
-  var root = document.documentElement;
-  root.classList.add('js');
-  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  // Counters: data-count="54" data-prefix="$" data-suffix="M"
-  var counters = document.querySelectorAll('[data-count]');
-  function runCounter(el) {
-    var target = parseFloat(el.getAttribute('data-count'));
-    var prefix = el.getAttribute('data-prefix') || '';
-    var suffix = el.getAttribute('data-suffix') || '';
-    if (reduce) { el.textContent = prefix + target + suffix; return; }
-    var start = null, dur = 1900;
-    function step(now) {
-      if (start === null) start = now;
-      var t = Math.min(1, (now - start) / dur);
-      var e = 1 - Math.pow(1 - t, 3);
-      el.textContent = prefix + Math.round(target * e) + suffix;
-      if (t < 1) requestAnimationFrame(step);
-    }
-    requestAnimationFrame(step);
-  }
-  if (counters.length) {
-    if ('IntersectionObserver' in window) {
-      var cio = new IntersectionObserver(function (entries) {
-        entries.forEach(function (e) {
-          if (e.isIntersecting) { runCounter(e.target); cio.unobserve(e.target); }
-        });
-      }, { threshold: 0.4 });
-      counters.forEach(function (el) { cio.observe(el); });
-    } else {
-      counters.forEach(runCounter);
-    }
-  }
-
-  // Snowball: rolls downhill, grows, absorbs the sector labels. Loops.
-  var sb = document.getElementById('snowball');
-  if (sb && sb.getContext) {
-    var ctx = sb.getContext('2d');
-    var DPR = Math.min(2, window.devicePixelRatio || 1);
-    var W = 520, H = 360;
-    sb.width = W * DPR; sb.height = H * DPR; ctx.scale(DPR, DPR);
-    var sectors = ['Aquaculture', 'E-mobility', 'Fintech', 'Mining', 'Rare earths', 'Hospitality'];
-    var x0 = 36, y0 = 150, x1 = 400, y1 = 292;          // slope, left to right, downhill
-    var r0 = 12, r1 = 84;
-    var DUR = 10000, PAUSE = 2600, TOTAL = DUR + PAUSE;
-    var labelX = sectors.map(function (_, i) { return x0 + 60 + i * 62; });
-    function slopeY(x) { return y0 + (y1 - y0) * (x - x0) / (x1 - x0); }
-    var ang = Math.atan2(y1 - y0, x1 - x0);
-    function ease(t) { return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2; }
-    function frame(ms) {
-      var tt = reduce ? 1 : ((ms % TOTAL) / DUR);
-      var t = Math.min(1, tt);
-      var p = ease(t);
-      ctx.clearRect(0, 0, W, H);
-      // slope line
-      ctx.strokeStyle = 'rgba(255,255,255,0.14)'; ctx.lineWidth = 1;
-      ctx.beginPath(); ctx.moveTo(x0 - 20, slopeY(x0 - 20)); ctx.lineTo(x1 + 30, slopeY(x1 + 30)); ctx.stroke();
-      // faint grid
-      ctx.strokeStyle = 'rgba(255,255,255,0.05)';
-      for (var gx = 20; gx < W; gx += 60) { ctx.beginPath(); ctx.moveTo(gx, 20); ctx.lineTo(gx, H - 20); ctx.stroke(); }
-      var cx = x0 + (x1 - x0) * p;
-      var r = r0 + (r1 - r0) * p;
-      var cy = slopeY(cx) - r * Math.cos(ang) + 1;
-      // trail
-      var grad = ctx.createLinearGradient(x0, 0, cx, 0);
-      grad.addColorStop(0, 'rgba(212,178,122,0)'); grad.addColorStop(1, 'rgba(212,178,122,0.35)');
-      ctx.strokeStyle = grad; ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(x0, slopeY(x0) - 1); ctx.lineTo(cx, slopeY(cx) - 1); ctx.stroke();
-      // labels
-      ctx.font = '500 11px "JetBrains Mono", monospace'; ctx.textBaseline = 'middle';
-      for (var i = 0; i < sectors.length; i++) {
-        var lx = labelX[i], ly = slopeY(lx) - 22 - i * 2;
-        var gone = (cx + r * 0.6) - lx;                  // >0 once the ball reaches the label
-        var k = gone > 0 ? Math.max(0, 1 - gone / 60) : 1;
-        if (k <= 0) continue;
-        ctx.save();
-        ctx.globalAlpha = k;
-        ctx.translate(lx, ly); ctx.scale(k, k);
-        var tw = ctx.measureText(sectors[i].toUpperCase()).width + 18;
-        ctx.fillStyle = 'rgba(14,26,46,0.9)'; ctx.strokeStyle = 'rgba(212,178,122,0.55)'; ctx.lineWidth = 1;
-        roundRect(ctx, -tw / 2, -11, tw, 22, 11); ctx.fill(); ctx.stroke();
-        ctx.fillStyle = '#D4B27A'; ctx.textAlign = 'center'; ctx.fillText(sectors[i].toUpperCase(), 0, 1);
-        ctx.restore();
-      }
-      // ball
-      ctx.save(); ctx.translate(cx, cy); ctx.rotate(p * 9);
-      var g = ctx.createRadialGradient(-r * 0.35, -r * 0.4, r * 0.1, 0, 0, r);
-      g.addColorStop(0, '#FFFFFF'); g.addColorStop(0.7, '#E6EBF2'); g.addColorStop(1, '#B7C2D2');
-      ctx.fillStyle = g; ctx.beginPath(); ctx.arc(0, 0, r, 0, Math.PI * 2); ctx.fill();
-      ctx.strokeStyle = 'rgba(255,255,255,0.25)'; ctx.lineWidth = 1;
-      for (var a = 0; a < 3; a++) { ctx.beginPath(); ctx.arc(0, 0, r * (0.45 + a * 0.2), a * 1.2, a * 1.2 + 2.2); ctx.stroke(); }
-      ctx.restore();
-      // shadow under ball
-      ctx.fillStyle = 'rgba(0,0,0,0.25)';
-      ctx.beginPath(); ctx.ellipse(cx + 4, slopeY(cx + 4) + 2, r * 0.9, r * 0.14, ang, 0, Math.PI * 2); ctx.fill();
-      // tag
-      ctx.globalAlpha = 1; ctx.textAlign = 'left'; ctx.fillStyle = '#7E8CA3'; ctx.font = '400 11px "JetBrains Mono", monospace';
-      ctx.fillText('C O M P O U N D I N G ,  N O T  T I M I N G', 36, H - 14);
-      if (!reduce) requestAnimationFrame(frame);
-    }
-    function roundRect(c, x, y, w, h, rr) { c.beginPath(); c.moveTo(x + rr, y); c.arcTo(x + w, y, x + w, y + h, rr); c.arcTo(x + w, y + h, x, y + h, rr); c.arcTo(x, y + h, x, y, rr); c.arcTo(x, y, x + w, y, rr); c.closePath(); }
-    if (document.fonts && document.fonts.ready) { document.fonts.ready.then(function () { requestAnimationFrame(frame); }); } else { requestAnimationFrame(frame); }
-  }
-
-  // Map arcs: draw on scroll into view
-  var map = document.getElementById('map');
-  if (map && 'IntersectionObserver' in window && !reduce) {
-    var mio = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) { if (e.isIntersecting) { map.classList.add('go'); mio.unobserve(map); } });
-    }, { threshold: 0.3 });
-    mio.observe(map);
-  } else if (map) { map.classList.add('go'); }
-
-  // Contact: preselect audience from #hash or a CTA card
-  var sel = document.getElementById('f-type');
-  function pick(h) {
-    var idx = { fo: 0, founder: 1, platform: 2, recruiter: 3 }[h];
-    if (sel && idx !== undefined) sel.selectedIndex = idx;
-  }
-  if (sel && location.hash) pick(location.hash.replace('#', ''));
-  document.querySelectorAll('.cta').forEach(function (a) {
-    a.addEventListener('click', function (ev) {
-      ev.preventDefault();
-      pick(a.getAttribute('href').replace('#', ''));
-      var f = document.getElementById('contact-form');
-      if (f) { f.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' }); var n = document.getElementById('f-name'); if (n) setTimeout(function () { n.focus(); }, 500); }
-    });
-  });
-
-  // Copy email
-  document.querySelectorAll('[data-copy]').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      var text = btn.getAttribute('data-copy');
-      var done = function () { var old = btn.textContent; btn.textContent = 'Copied'; setTimeout(function () { btn.textContent = old; }, 1800); };
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(text).then(done, function () { fallback(text); done(); });
-      } else { fallback(text); done(); }
-    });
-  });
-  function fallback(text) {
-    var ta = document.createElement('textarea');
-    ta.value = text; ta.setAttribute('readonly', ''); ta.style.position = 'absolute'; ta.style.left = '-9999px';
-    document.body.appendChild(ta); ta.select();
-    try { document.execCommand('copy'); } catch (e) {}
-    document.body.removeChild(ta);
-  }
-
-  // Portal sign-in: private release, no backend yet.
-  var pf = document.getElementById('portal-form');
-  if (pf) {
-    pf.addEventListener('submit', function (ev) {
-      ev.preventDefault();
-      var t = document.getElementById('portal-toast');
-      t.hidden = false;
-      t.textContent = 'The portal is in private release and sign-in is not open yet. If you are an investor, email gdp@snowball.holdings and we will send your credentials when your vehicle goes live.';
-    });
-  }
-
-  // Contact form: no backend yet. Builds a mailto as a fallback and shows a note.
-  var form = document.getElementById('contact-form');
-  if (form) {
-    form.addEventListener('submit', function (ev) {
-      ev.preventDefault();
-      var who = form.querySelector('#f-type').value;
-      var name = form.querySelector('#f-name').value.trim();
-      var msg = form.querySelector('#f-msg').value.trim();
-      var subject = encodeURIComponent('Enquiry from ' + (name || 'the website') + ' (' + who + ')');
-      var body = encodeURIComponent(msg + '\n\n' + name);
-      var toast = document.getElementById('form-toast');
-      toast.hidden = false;
-      toast.innerHTML = 'Thank you. Your email app should open now. If it does not, write to <strong>gdp@snowball.holdings</strong> and paste your message.';
-      window.location.href = 'mailto:gdp@snowball.holdings?subject=' + subject + '&body=' + body;
-    });
-  }
-})();
-</script>
+<script src="assets/site.js" defer></script>
 
 </body>
 </html>
