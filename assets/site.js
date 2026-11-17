@@ -189,15 +189,15 @@
       ev.preventDefault();
       var t = document.getElementById('portal-toast');
       t.hidden = false;
-      t.textContent = 'The portal is in private release and sign-in is not open yet. If you are an investor, email gdp@snowball.holdings and we will send your credentials when your vehicle goes live.';
+      t.textContent = 'The portal is in private release and sign-in is not open yet. If you are an investor, email secretariat@snowball.holdings and we will send your credentials when your vehicle goes live.';
     });
   }
 
   // Contact form.
-  // If FORM_ENDPOINT is set (e.g. a Google Apps Script web app that emails gdp@snowball.holdings),
+  // If FORM_ENDPOINT is set (e.g. a Google Apps Script web app that emails secretariat@snowball.holdings),
   // the message is posted there; otherwise, or if the post fails, a pre-filled email opens instead.
   var FORM_ENDPOINT = '';
-  var TO = 'gdp@snowball.holdings';
+  var TO = 'secretariat@snowball.holdings';
   var form = document.getElementById('contact-form');
   if (form) {
     var opened = Date.now();
